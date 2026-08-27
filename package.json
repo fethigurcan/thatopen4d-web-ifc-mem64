@@ -9,7 +9,11 @@
     "README.md"
   ],
   "exports": {
-    ".": "./dist/web-ifc-api.js",
+    ".": {
+      "require": "./dist/web-ifc-api-node.js",
+      "node": "./dist/web-ifc-api-node.js",
+      "import": "./dist/web-ifc-api.js"
+    },
     "./web-ifc-api-node": "./dist/web-ifc-api-node.js",
     "./web-ifc-api-iife": "./dist/web-ifc-api-iife.js",
     "./web-ifc.wasm": "./dist/web-ifc.wasm",

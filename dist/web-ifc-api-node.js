@@ -4,7 +4,11 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  try {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  } catch (e) {
+    throw mod = 0, e;
+  }
 };
 var __export = (target, all) => {
   for (var name in all)
@@ -4322,7 +4326,7 @@ var require_web_ifc_mt = __commonJS({
         }
         var wasmImports;
         function assignWasmImports() {
-          wasmImports = { i: ___cxa_throw, P: __abort_js, ha: __embind_finalize_value_array, q: __embind_finalize_value_object, x: __embind_register_bigint, fa: __embind_register_bool, m: __embind_register_class, l: __embind_register_class_constructor, c: __embind_register_class_function, da: __embind_register_emval, E: __embind_register_float, d: __embind_register_function, u: __embind_register_integer, o: __embind_register_memory_view, s: __embind_register_optional, ea: __embind_register_std_string, y: __embind_register_std_wstring, ia: __embind_register_value_array, p: __embind_register_value_array_element, r: __embind_register_value_object, h: __embind_register_value_object_field, ga: __embind_register_void, Z: __emscripten_init_main_thread_js, R: __emscripten_notify_mailbox_postmessage, U: __emscripten_receive_on_main_thread_js, I: __emscripten_runtime_keepalive_clear, C: __emscripten_thread_cleanup, Y: __emscripten_thread_mailbox_await, ca: __emscripten_thread_set_strongref, g: __emval_create_invoker, b: __emval_decref, B: __emval_get_global, n: __emval_get_property, j: __emval_incref, A: __emval_instanceof, f: __emval_invoke, z: __emval_is_number, G: __emval_is_string, F: __emval_new_array, k: __emval_new_cstring, v: __emval_new_object, e: __emval_run_destructors, t: __emval_set_property, V: __gmtime_js, W: __localtime_js, J: __setitimer_js, X: __tzset_js, T: _clock_time_get, D: _emscripten_check_blocking_allowed, ba: _emscripten_exit_with_live_runtime, w: _emscripten_get_now, Q: _emscripten_resize_heap, $: _environ_get, aa: _environ_sizes_get, K: _exit, M: _fd_close, _: _fd_fdstat_get, O: _fd_read, N: _fd_seek, S: _fd_write, a: wasmMemory, H: _proc_exit, L: _random_get };
+          wasmImports = { k: ___cxa_throw, P: __abort_js, ha: __embind_finalize_value_array, q: __embind_finalize_value_object, x: __embind_register_bigint, fa: __embind_register_bool, m: __embind_register_class, l: __embind_register_class_constructor, c: __embind_register_class_function, da: __embind_register_emval, E: __embind_register_float, d: __embind_register_function, u: __embind_register_integer, o: __embind_register_memory_view, s: __embind_register_optional, ea: __embind_register_std_string, y: __embind_register_std_wstring, ia: __embind_register_value_array, p: __embind_register_value_array_element, r: __embind_register_value_object, h: __embind_register_value_object_field, ga: __embind_register_void, Z: __emscripten_init_main_thread_js, R: __emscripten_notify_mailbox_postmessage, U: __emscripten_receive_on_main_thread_js, I: __emscripten_runtime_keepalive_clear, C: __emscripten_thread_cleanup, Y: __emscripten_thread_mailbox_await, ca: __emscripten_thread_set_strongref, g: __emval_create_invoker, b: __emval_decref, B: __emval_get_global, n: __emval_get_property, i: __emval_incref, A: __emval_instanceof, f: __emval_invoke, z: __emval_is_number, G: __emval_is_string, F: __emval_new_array, j: __emval_new_cstring, v: __emval_new_object, e: __emval_run_destructors, t: __emval_set_property, V: __gmtime_js, W: __localtime_js, J: __setitimer_js, X: __tzset_js, T: _clock_time_get, D: _emscripten_check_blocking_allowed, ba: _emscripten_exit_with_live_runtime, w: _emscripten_get_now, Q: _emscripten_resize_heap, $: _environ_get, aa: _environ_sizes_get, K: _exit, M: _fd_close, _: _fd_fdstat_get, O: _fd_read, N: _fd_seek, S: _fd_write, a: wasmMemory, H: _proc_exit, L: _random_get };
         }
         function applySignatureConversions(wasmExports2) {
           wasmExports2 = Object.assign({}, wasmExports2);
@@ -8378,7 +8382,7 @@ var require_web_ifc_node = __commonJS({
           memory = wasmMemory = wasmExports2["_"];
           __indirect_function_table = wasmTable = wasmExports2["ba"];
         }
-        var wasmImports = { h: ___cxa_throw, K: __abort_js, Y: __embind_finalize_value_array, p: __embind_finalize_value_object, v: __embind_register_bigint, W: __embind_register_bool, l: __embind_register_class, k: __embind_register_class_constructor, b: __embind_register_class_function, U: __embind_register_emval, A: __embind_register_float, c: __embind_register_function, t: __embind_register_integer, n: __embind_register_memory_view, r: __embind_register_optional, V: __embind_register_std_string, w: __embind_register_std_wstring, Z: __embind_register_value_array, o: __embind_register_value_array_element, q: __embind_register_value_object, g: __embind_register_value_object_field, X: __embind_register_void, E: __emscripten_runtime_keepalive_clear, f: __emval_create_invoker, a: __emval_decref, z: __emval_get_global, m: __emval_get_property, i: __emval_incref, y: __emval_instanceof, e: __emval_invoke, x: __emval_is_number, C: __emval_is_string, B: __emval_new_array, j: __emval_new_cstring, u: __emval_new_object, d: __emval_run_destructors, s: __emval_set_property, O: __gmtime_js, P: __localtime_js, F: __setitimer_js, Q: __tzset_js, L: _clock_time_get, M: _emscripten_resize_heap, S: _environ_get, T: _environ_sizes_get, H: _fd_close, R: _fd_fdstat_get, J: _fd_read, I: _fd_seek, N: _fd_write, D: _proc_exit, G: _random_get };
+        var wasmImports = { j: ___cxa_throw, K: __abort_js, Y: __embind_finalize_value_array, p: __embind_finalize_value_object, v: __embind_register_bigint, W: __embind_register_bool, l: __embind_register_class, k: __embind_register_class_constructor, b: __embind_register_class_function, U: __embind_register_emval, A: __embind_register_float, c: __embind_register_function, t: __embind_register_integer, n: __embind_register_memory_view, r: __embind_register_optional, V: __embind_register_std_string, w: __embind_register_std_wstring, Z: __embind_register_value_array, o: __embind_register_value_array_element, q: __embind_register_value_object, g: __embind_register_value_object_field, X: __embind_register_void, E: __emscripten_runtime_keepalive_clear, f: __emval_create_invoker, a: __emval_decref, z: __emval_get_global, m: __emval_get_property, h: __emval_incref, y: __emval_instanceof, e: __emval_invoke, x: __emval_is_number, C: __emval_is_string, B: __emval_new_array, i: __emval_new_cstring, u: __emval_new_object, d: __emval_run_destructors, s: __emval_set_property, O: __gmtime_js, P: __localtime_js, F: __setitimer_js, Q: __tzset_js, L: _clock_time_get, M: _emscripten_resize_heap, S: _environ_get, T: _environ_sizes_get, H: _fd_close, R: _fd_fdstat_get, J: _fd_read, I: _fd_seek, N: _fd_write, D: _proc_exit, G: _random_get };
         function applySignatureConversions(wasmExports2) {
           wasmExports2 = Object.assign({}, wasmExports2);
           var makeWrapper_pp = (f) => (a0) => Number(f(BigInt(a0)));
@@ -48005,7 +48009,7 @@ var IFC4;
   }
   IFC42.IfcController = IfcController;
 })(IFC4 || (IFC4 = {}));
-SchemaNames[3] = ["IFC4X3", "IFC4X1", "IFC4X2", "IFC4X3_RC3", "IFC4X3_RC4", "IFC4X3_RC1", "IFC4X3_RC2", "IFC4X3_ADD2", "IFC4X3_ADD1"];
+SchemaNames[3] = ["IFC4X3", "IFC4X1", "IFC4X2", "IFC4X3_RC3", "IFC4X3_RC4", "IFC4X3_RC1", "IFC4X3_RC2", "IFC4X3_ADD2", "IFC4X3_ADD1", "IFC4X2SCGL"];
 FromRawLineData[3] = {
   3630933823: (v) => new IFC4X3.IfcActorRole(v[0], (v[1] ?? void 0) === void 0 || v[1] === "" ? null : new IFC4X3.IfcLabel((v[1] ?? void 0) === void 0 || v[1] === "" ? null : v[1].value), (v[2] ?? void 0) === void 0 || v[2] === "" ? null : new IFC4X3.IfcText((v[2] ?? void 0) === void 0 || v[2] === "" ? null : v[2].value)),
   618182010: (v) => new IFC4X3.IfcAddress(v[0], (v[1] ?? void 0) === void 0 || v[1] === "" ? null : new IFC4X3.IfcText((v[1] ?? void 0) === void 0 || v[1] === "" ? null : v[1].value), (v[2] ?? void 0) === void 0 || v[2] === "" ? null : new IFC4X3.IfcLabel((v[2] ?? void 0) === void 0 || v[2] === "" ? null : v[2].value)),
@@ -72288,6 +72292,7 @@ var INTEGER = 10;
 function ms() {
   return (/* @__PURE__ */ new Date()).getTime();
 }
+var MT_INIT_TIMEOUT_MS = 1e4;
 var IfcAPI2 = class {
   constructor() {
     /** @ignore */
@@ -72311,10 +72316,12 @@ var IfcAPI2 = class {
    * you override the path from which the wasm module is loaded.
    */
   async Init(customLocateFileHandler, forceSingleThread = false) {
+    let shouldRetrySingleThread = false;
     if (!WebIFCWasm) {
       if (typeof self !== "undefined" && self.crossOriginIsolated && !forceSingleThread) {
         try {
           WebIFCWasm = require_web_ifc_mt();
+          shouldRetrySingleThread = true;
         } catch (ex) {
           WebIFCWasm = require_web_ifc_node();
         }
@@ -72327,10 +72334,40 @@ var IfcAPI2 = class {
         }
         return (currentScriptPath !== void 0 ? currentScriptPath : prefix) + this.wasmPath + path;
       };
-      this.wasmModule = await WebIFCWasm({
-        noInitialRun: true,
-        locateFile: customLocateFileHandler || locateFileHandler
-      });
+      try {
+        const modulePromise = WebIFCWasm({
+          noInitialRun: true,
+          locateFile: customLocateFileHandler || locateFileHandler
+        });
+        if (shouldRetrySingleThread) {
+          this.wasmModule = await Promise.race([
+            modulePromise,
+            new Promise(
+              (_, reject) => setTimeout(
+                () => reject(
+                  new Error(
+                    `MT WASM init timed out after ${MT_INIT_TIMEOUT_MS}ms`
+                  )
+                ),
+                MT_INIT_TIMEOUT_MS
+              )
+            )
+          ]);
+        } else {
+          this.wasmModule = await modulePromise;
+        }
+      } catch (error) {
+        if (!shouldRetrySingleThread) throw error;
+        Log.warn(
+          "MT WASM init failed, retrying with single-thread module.",
+          error
+        );
+        WebIFCWasm = require_web_ifc_node();
+        this.wasmModule = await WebIFCWasm({
+          noInitialRun: true,
+          locateFile: customLocateFileHandler || locateFileHandler
+        });
+      }
       this.SetLogLevel(4 /* LOG_LEVEL_ERROR */);
     } else {
       Log.error(
