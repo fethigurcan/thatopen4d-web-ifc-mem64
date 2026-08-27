@@ -17,15 +17,27 @@ CONTAINER_NAME="thatopen4d-web-ifc-mem64-extract"
 echo "==> Submodule init"
 git submodule update --init --recursive
 
-echo "==> Patches anwenden"
+echo "==> Patches anwenden (idempotent)"
 cd vendor/web-ifc
-# Vorherigen Patch-State zuruecksetzen (idempotent).
-git checkout -- .
-git clean -fd src/cpp/CMakeLists.txt src/cpp/wasm/web-ifc-wasm.cpp src/ts/web-ifc-api.ts 2>/dev/null || true
+# Nur *untracked* Reste eines frueheren Laufs entfernen. KEIN `git checkout -- .`
+# mehr: die mem64-Aenderungen leben inzwischen als echte Commits auf dem
+# Submodule-Branch (fethigurcan/engine_web-ifc @ mem64-fixes), nicht nur als
+# Working-Tree-Patch — ein Hard-Reset wuerde sie (und die Debug-Trace) killen.
+git clean -fd 2>/dev/null || true
 
+# Die patches/ sind die Legacy-Zufuhr. Wenn der Submodule-Pin sie schon
+# eingebacken hat, wird "already applied" erkannt und uebersprungen.
 for patch in "$REPO_ROOT"/patches/*.patch; do
-  echo "  - $(basename "$patch")"
-  git apply "$patch"
+  name="$(basename "$patch")"
+  if git apply --check "$patch" 2>/dev/null; then
+    echo "  - $name (wird angewendet)"
+    git apply "$patch"
+  elif git apply --reverse --check "$patch" 2>/dev/null; then
+    echo "  - $name (bereits im Submodule-Pin enthalten, uebersprungen)"
+  else
+    echo "  - $name: passt NICHT und ist auch nicht bereits angewendet — Abbruch." >&2
+    exit 1
+  fi
 done
 
 echo "==> Docker-Build"
